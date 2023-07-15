@@ -88,4 +88,4 @@ def edicion_perfil(request):
 
 class ModificarContra(LoginRequiredMixin,PasswordChangeView):
      template_name = 'usuario/edicion_contra.html'
-     success_url = reverse_lazy ('usuario:edicion_perfil')
+     success_url = reverse_lazy ('usuario:editar_perfil')

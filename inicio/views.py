@@ -24,7 +24,7 @@ def crear_blog(request):
         formulario = CrearBlogForm(request.POST)
         if formulario.is_valid():
             info = formulario.cleaned_data
-            blog = Blog(titulo=info['titulo'], subtitulo = info ['subtitulo'], autor = info ['autor'], fecha =info['fecha'], cuerpo = info ['cuerpo'], portada = ['portada']) 
+            blog = Blog(titulo=info['titulo'], subtitulo = info ['subtitulo'], autor = info ['autor'], fecha =info['fecha'], cuerpo = info ['cuerpo']) 
             
             blog.save()
             mensaje = f'Se creo el Blog {blog.titulo}'
