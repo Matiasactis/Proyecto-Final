@@ -1,25 +1,26 @@
 {% extends 'base.html' %}
 
 {% block title_head %}
-<title>Crear Blog</title>
+<title>Cambiar Contraseña</title>
 {% endblock title_head %}
 
 {% block h1_header  %}
-<h1>Blog</h1>
+<h1>Cambiar contraseña</h1>
 {% endblock h1_header  %}
 
 
 {% block contenido %}
 
-<p>{{mensaje}}</p>
 
-<form action="" method = "post" >
+<form action={% url 'usuario:cambiar_contra' %} method = "POST">
     {% csrf_token %}
     <table>
-    {{formulario}}
+    {{form}}
     </table>
   
-    <button>Crear Blog</button>
+    <button>Guardar</button>
 
 </form>
 {% endblock contenido %}
+
+

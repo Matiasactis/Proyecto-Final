@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
 
 {% block title_head %}
-<title>Crear Blog</title>
+<title>Registrarse</title>
 {% endblock title_head %}
 
 {% block h1_header  %}
-<h1>Blog</h1>
+<h1>Registrate Aqui</h1>
 {% endblock h1_header  %}
 
 
 {% block contenido %}
 
-<p>{{mensaje}}</p>
 
-<form action="" method = "post" >
+<form action={% url 'usuario:registrarse' %} method = "POST">
     {% csrf_token %}
     <table>
     {{formulario}}
     </table>
   
-    <button>Crear Blog</button>
+    <button>Registrar</button>
 
 </form>
 {% endblock contenido %}

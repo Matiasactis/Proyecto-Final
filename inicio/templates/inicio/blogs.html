@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Blogs</title>
+{% endblock title_head %}
+
+{% block h1_header  %}
+<h1>Blogs</h1>
+{% endblock h1_header  %}
+
+
+{% block contenido %}
+<button>
+<a class="navbar-brand" href="{% url 'inicio:crear_blog' %}">Crear un Blog</a>
+</button>
+
+<p>{{mensaje}}</p>
+
+<form action={% url 'inicio:blogs' %} >
+    {% csrf_token %}
+        {{formulario}}
+    <button>Buscar</button>
+</form>
+
+{% if lista_blogs %}
+{% for blog in lista_blogs %}
+<li>
+    <a href={% url 'inicio:detalle_blog' blog.id %}>{{blog}}</a>
+
+    <button>
+    <a class="navbar-brand" href={% url 'inicio:modificar_blog' blog.id %}>Modificar</a>
+    </button>
+    </button>
+    <a class="navbar-brand" href={% url 'inicio:eliminar_blog' blog.id %}>Eliminar</a>
+    </button>
+</li>
+{% endfor %}
+{% else %}
+<p>No se encontro el blog buscado.</p>
+{% endif %}
+
+{% endblock contenido %}

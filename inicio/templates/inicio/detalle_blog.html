@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Blog</title>
+{% endblock title_head %}
+
+{% block h1_header  %}
+<h1>Blog {{blog.nombre}}</h1>
+{% endblock h1_header  %}
+
+
+{% block contenido %}
+<li>Titulo: {{blog.titulo}}  </li>
+<li>Subtitulo: {{blog.subtitulo}}  </li>
+<li>Autor: {{blog.autor}}</li>
+<li>Fecha de Creacion: {{blog.fecha}}</li>
+<li>Cuerpo: {{blog.cuerpo}} </li>
+{% endblock contenido %}

@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
 
 {% block title_head %}
-<title>Crear Blog</title>
+<title>Iniciar sesion</title>
 {% endblock title_head %}
 
 {% block h1_header  %}
-<h1>Blog</h1>
+<h1>Iniciar sesion</h1>
 {% endblock h1_header  %}
 
 
 {% block contenido %}
 
-<p>{{mensaje}}</p>
 
-<form action="" method = "post" >
+<form action={% url 'usuario:login' %} method = "POST">
     {% csrf_token %}
     <table>
     {{formulario}}
     </table>
   
-    <button>Crear Blog</button>
+    <button>Iniciar Sesion</button>
 
 </form>
 {% endblock contenido %}
