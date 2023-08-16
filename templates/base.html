@@ -29,7 +29,7 @@
                 <img src={{request.user.infoextra.avatar.url}} alt="" height = '40px'>
                 {% endif %}
                 
-                <a class="navbar-brand" href = {% url 'usuario:editar_perfil'%}>{{request.user.username}} </a>
+                <a class="navbar-brand" href = {% url 'usuario:editar_perfil' %}>{{request.user.username}} </a>
                 <a class="btn btn-secondary" href={% url 'usuario:logout' %}>Cerrar sesion</a>
                 {% else %}
                 <a class="btn btn-primary" href={% url 'usuario:login' %}>Iniciar sesion</a>

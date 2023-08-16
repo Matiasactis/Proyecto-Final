@@ -4,3 +4,4 @@ from inicio.models import Blog
 # Register your models here.
 
 admin.site.register(Infoextra)
+admin.site.register(Blog)

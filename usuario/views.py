@@ -7,6 +7,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
 from usuario.models import Infoextra
+from django.views.generic.detail import DetailView
+from django.contrib.auth.models import User
 
 
 
@@ -89,3 +91,4 @@ def edicion_perfil(request):
 class ModificarContra(LoginRequiredMixin,PasswordChangeView):
      template_name = 'usuario/edicion_contra.html'
      success_url = reverse_lazy ('usuario:editar_perfil')
+     
