@@ -14,7 +14,7 @@
 <li>Subtitulo: {{blog.subtitulo}}  </li>
 <li>Autor: {{blog.autor}}</li>
 <li>Fecha de Creacion: {{blog.fecha}}</li>
-<li>Cuerpo: {{blog.cuerpo}} </li>
+<li>Cuerpo: {{blog.cuerpo| safe}} </li>
 <li>Imagen: <img src="{{ blog.imagen.url }}" alt="{{ blog.titulo }}" width="100"></li>
 </li>
 {% endblock contenido %}
